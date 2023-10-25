@@ -29,7 +29,7 @@ resource_fields = api.model('Resource', {
     'Toxicidad': fields.String,
 })
 
-@ns.route('/Sentimientos')
+@ns.route('/Toxicidad')
 class AnalizadorApi(Resource):
 
     @api.doc(parser=medidor)

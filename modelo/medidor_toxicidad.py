@@ -19,4 +19,13 @@ class MedidorToxicidad():
     def medir_toxicidad(self, texto):
         texto_cv = CountVectorizer(vocabulary=vocabulary).transform([texto]).conjugate()
         toxicidad = self.__model.predict(texto_cv)[0]
-        return toxicidad 
+        return self.traductor(toxicidad)
+    
+    def traductor(self, toxicida):
+
+        if toxicida < 0.1:
+            return "toxicidad baja"
+        elif toxicida > 0.1 and toxicida < 0.34:
+            return "toxicidad media"
+        elif toxicida > 0.34 and toxicida < 1:
+            return "toxicidad alta"

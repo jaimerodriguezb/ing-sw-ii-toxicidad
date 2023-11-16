@@ -40,6 +40,6 @@ def mensaje_muy_toxico():
 def test_modelo_toxicidad_alta_ok(mocker, mensaje_muy_toxico):
     toxicidad = MedidorToxicidad().medir_toxicidad(mensaje_muy_toxico)
 
-    assert toxicidad > 0.34
+    assert toxicidad > 0.34 
 
 
